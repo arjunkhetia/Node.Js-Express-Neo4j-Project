@@ -189,7 +189,7 @@ module.exports.close = async () => {
 }
 ```
 
-![Neo4j Page](https://github.com/arjunkhetia/Node.Js-Express-Neo4j-Project/blob/master/public/neo4j.png "Neo4j Page")
+![Neo4j Page](https://github.com/arjunkhetia/Node.Js-Express-Neo4j-Project/blob/main/public/neo4j.png "Neo4j Page")
 
 # Server Status Monitor
 
@@ -226,7 +226,7 @@ app.use(require('express-status-monitor')({
 }));
 ```
 
-![Monitoring Page](https://github.com/arjunkhetia/Node.Js-Express-Neo4j-Project/blob/master/public/status-monitor.png "Monitoring Page")
+![Monitoring Page](https://github.com/arjunkhetia/Node.Js-Express-Neo4j-Project/blob/main/public/status-monitor.png "Monitoring Page")
 
 [version-image]: https://img.shields.io/badge/Version-1.0.0-orange.svg
 [linuxbuild-image]: https://img.shields.io/badge/Linux-passing-brightgreen.svg
