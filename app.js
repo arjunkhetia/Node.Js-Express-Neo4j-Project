@@ -11,6 +11,7 @@ var fs = require('fs');
 var rfs = require('rotating-file-stream');
 var helmet = require('helmet');
 var compression = require('compression');
+var db = require('./dbconfig');
 
 // Defining routes
 var routes = require('./routes');
@@ -157,5 +158,15 @@ process.on('uncaughtException', (error) => {
    console.error('Uncaught Exception is thrown with ',error+'\n');
    process.exit();
 });
+
+db.connect()
+  .then(async () => {
+    console.log('Neo4j Database connected...');
+    const serverInfo = await db.getDriver().getServerInfo();
+    console.log(serverInfo);
+  }).catch((e) => {
+    console.error(e);
+    process.exit(1);
+  });
 
 module.exports = app;

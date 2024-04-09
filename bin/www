@@ -38,6 +38,7 @@ if (cluster.isWorker) {
   var debug = require('debug')('node-express-project:server');
   var http = require('http');
   var ON_DEATH = require('death');
+  var db = require('../dbconfig');
   /**
    * Get port from environment and store in Express.
    */
@@ -107,9 +108,11 @@ if (cluster.isWorker) {
    * It sets the callback on SIGINT, SIGQUIT & SIGTERM.
    */
    ON_DEATH(function(signal, err) {
-     console.log('\nServer is going down now...');
-     server.close();
-     process.exit();
+      db.close();
+      console.log('\nDatabase connections have ended');
+      console.log('Server is going down now...');
+      server.close();
+      process.exit();
    });
   console.log('Node-Express-Neo4j-Server Started on http://localhost:'+port+'\n');
 }

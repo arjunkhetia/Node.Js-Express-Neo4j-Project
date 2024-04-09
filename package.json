@@ -17,6 +17,7 @@
     "hbs": "^4.2.0",
     "helmet": "^7.1.0",
     "morgan": "^1.10.0",
+    "neo4j-driver": "^5.19.0",
     "node-toobusy": "^0.6.3",
     "portfinder": "^1.0.32",
     "request": "^2.88.2",
